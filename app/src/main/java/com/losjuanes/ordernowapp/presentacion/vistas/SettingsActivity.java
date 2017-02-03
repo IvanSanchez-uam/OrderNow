@@ -15,6 +15,8 @@ import com.losjuanes.ordernowapp.R;
 import com.losjuanes.ordernowapp.presentacion.controladores.Controlador;
 import com.losjuanes.ordernowapp.presentacion.controladores.ImplementacionControlador;
 
+import java.io.IOException;
+
 public class SettingsActivity extends AppCompatActivity {
 
     private EditText etNumMesa;
@@ -47,18 +49,23 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String numMesa = "";
                 int numeroMesa = 0;
-                boolean mesaAsignada = false;
+                boolean mesaAsignada;
 
                 numMesa = etNumMesa.getText().toString();
                 if (numMesa.compareTo("") != 0){
                     numeroMesa = Integer.parseInt(numMesa);
-                    mesaAsignada = controlador.asigna_numeroMesa(numeroMesa, settingsActivity);
+                    try {
+                        mesaAsignada = controlador.asigna_numeroMesa(numeroMesa, settingsActivity);
 
-                    if(mesaAsignada){
-                        finish();
-                    }else{
-                        Toast.makeText(SettingsActivity.this, getResources().getString(R.string.msj_numMesaNoAsignado), Toast.LENGTH_LONG).show();
+                        if(mesaAsignada){
+                            finish();
+                        }else{
+                            Toast.makeText(SettingsActivity.this, getResources().getString(R.string.msj_numMesaNoAsignado), Toast.LENGTH_LONG).show();
+                        }
+                    } catch (IOException e) {
+                        Toast.makeText(settingsActivity.getApplicationContext(), settingsActivity.getResources().getString(R.string.msj_falloConexion_asignarMesa), Toast.LENGTH_SHORT).show();
                     }
+
                 }
             }
         });

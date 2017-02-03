@@ -9,11 +9,14 @@ import com.losjuanes.ordernowapp.negocio.Servicio;
 import com.losjuanes.ordernowapp.presentacion.vistas.Bienvenida;
 import com.losjuanes.ordernowapp.presentacion.vistas.SettingsActivity;
 
+import java.io.IOException;
+
 import static android.content.Context.MODE_PRIVATE;
 
 public class ImplementacionControlador implements Controlador {
 
     private Servicio servicio = new ImplementacionServicio();
+
     /**
      * Inicia la transicion de activityInicio a activityDestino.
      *
@@ -32,11 +35,11 @@ public class ImplementacionControlador implements Controlador {
      * Cuando el método asigna_numeroMesa() regresa True se iniciara la actividad Bienvenida,
      *
      * @param numMesa, numero de mesa ingresado por el administrador de la aplicacion
-     * @return true, si el numero de mesa fue asignado, false en caso contrario.
+     * @return true, si el numero de mesa fue asignado, false si el numero de mesa ya existe.
      */
     @Override
-    public boolean asigna_numeroMesa(int numMesa, Activity activity) {
-        boolean mesaAsignada = false;
+    public boolean asigna_numeroMesa(int numMesa, Activity activity) throws IOException {
+        boolean mesaAsignada;
 
         mesaAsignada = servicio.asigna_numeroMesa(numMesa);
 
@@ -47,8 +50,6 @@ public class ImplementacionControlador implements Controlador {
             editorPrefMesa.commit();
 
             iniciaActivity(activity, Bienvenida.class);
-
-            mesaAsignada = true;
         }
         return mesaAsignada;
     }
