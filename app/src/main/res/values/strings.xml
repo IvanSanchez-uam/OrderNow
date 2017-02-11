@@ -4,5 +4,7 @@
     <string name="btn_continuar">Continuar</string>
     <string name="t"></string>
     <string name="msj_numMesaNoAsignado">El número de mesa ya existe.</string>
-    <string name="msj_falloConexion_asignarMesa">Fallo en la conexión.</string>
+    <string name="msj_falloConexion">Fallo en la conexión.</string>
+    <string name="msj_ingresarNumMesa">Ingresar el número de mesa.</string>
+
 </resources>

@@ -3,19 +3,19 @@ package com.losjuanes.ordernowapp.presentacion.controladores;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.util.Log;
 
-import com.losjuanes.ordernowapp.negocio.ImplementacionServicio;
-import com.losjuanes.ordernowapp.negocio.Servicio;
+import com.losjuanes.ordernowapp.negocio.ImplementacionServicioMesa;
+import com.losjuanes.ordernowapp.negocio.ServicioMesa;
 import com.losjuanes.ordernowapp.presentacion.vistas.Bienvenida;
-import com.losjuanes.ordernowapp.presentacion.vistas.SettingsActivity;
 
 import java.io.IOException;
 
 import static android.content.Context.MODE_PRIVATE;
 
-public class ImplementacionControlador implements Controlador {
+public class ImplementacionControladorAsignarMesa implements ControladorAsignarMesa {
 
-    private Servicio servicio = new ImplementacionServicio();
+    private ServicioMesa servicio = new ImplementacionServicioMesa();
 
     /**
      * Inicia la transicion de activityInicio a activityDestino.
@@ -38,12 +38,13 @@ public class ImplementacionControlador implements Controlador {
      * @return true, si el numero de mesa fue asignado, false si el numero de mesa ya existe.
      */
     @Override
-    public boolean asigna_numeroMesa(int numMesa, Activity activity) throws IOException {
-        boolean mesaAsignada;
+    public int asignar_numeroMesa(final int numMesa, Activity activity) throws IOException {
 
-        mesaAsignada = servicio.asigna_numeroMesa(numMesa);
+        int mesaAsignada;
+        mesaAsignada = servicio.asignar_numeroMesa(numMesa);
+        Log.d("MesaAsignada",mesaAsignada + " ---------");
 
-        if (mesaAsignada){
+        if (mesaAsignada == 200){
             SharedPreferences preferenciasMesa = activity.getApplicationContext().getSharedPreferences("PreferenciasMesa", MODE_PRIVATE);
             SharedPreferences.Editor editorPrefMesa = preferenciasMesa.edit();
             editorPrefMesa.putInt("num_mesa", numMesa);
@@ -53,6 +54,4 @@ public class ImplementacionControlador implements Controlador {
         }
         return mesaAsignada;
     }
-
-
 }
