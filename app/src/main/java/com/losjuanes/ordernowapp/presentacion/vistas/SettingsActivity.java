@@ -38,7 +38,7 @@ public class SettingsActivity extends AppCompatActivity {
         int verificaNumMesa = pref.getInt("num_mesa", 0);
 
         if(verificaNumMesa != 0){
-            controlador.iniciaActivity(SettingsActivity.this, Bienvenida.class);
+            controlador.iniciaActivity(SettingsActivity.this, NumPersonasActivity.class);
             finish();
         }
 
@@ -132,8 +132,4 @@ public class SettingsActivity extends AppCompatActivity {
             return msjRespuestaApiREST;
         }
     }
-
-
-
-
 }

@@ -1,10 +1,16 @@
 <resources>
     <string name="app_name">OrderNow App</string>
-    <string name="tv_bienvenidos">Bienvenido(s)</string>
+
+    <string name="tv_bienvenida">Bienvenido(s)</string>
+    <string name="tv_tocaParaContinuar">Toca para continuar</string>
+
+    <string name="tv_numPersonas">¿Cuántas personas son?</string>
     <string name="btn_continuar">Continuar</string>
-    <string name="t"></string>
+
     <string name="msj_numMesaNoAsignado">El número de mesa ya existe.</string>
     <string name="msj_falloConexion">Fallo en la conexión.</string>
     <string name="msj_ingresarNumMesa">Ingresar el número de mesa.</string>
+    <string name="msj_numOrdenNoAsignado">Error! intenta de nuevo.</string>
+
 
 </resources>

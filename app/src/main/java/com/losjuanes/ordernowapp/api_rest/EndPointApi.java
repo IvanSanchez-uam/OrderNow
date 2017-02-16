@@ -1,6 +1,7 @@
 package com.losjuanes.ordernowapp.api_rest;
 
 import com.losjuanes.ordernowapp.api_rest.pojo.Mesa;
+import com.losjuanes.ordernowapp.api_rest.pojo.Orden;
 import com.losjuanes.ordernowapp.api_rest.respuestas_json.RespuestaNumMesa;
 
 import okhttp3.RequestBody;
@@ -16,4 +17,10 @@ public interface EndPointApi {
      */
     @POST(ConstantesRestApi.AGREGAR_MESA)
     Call<ResponseBody> asignarNumMesa(@Body Mesa mesa);
+
+    /**
+     * Usado para generar el numero de orden.
+     */
+    @POST(ConstantesRestApi.GENERAR_NUM_ORDEN)
+    Call<Integer> generarNumOrden(@Body Orden orden);
 }

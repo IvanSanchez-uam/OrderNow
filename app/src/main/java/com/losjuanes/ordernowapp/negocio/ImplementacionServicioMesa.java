@@ -42,8 +42,6 @@ public class ImplementacionServicioMesa implements ServicioMesa {
         respuestaNumMesa = call.execute();
         mesaAsignada = respuestaNumMesa.code();
 
-        Log.d("MesaAsignada",mesaAsignada + " " + "***************");
-
         return mesaAsignada;
     }
 }
