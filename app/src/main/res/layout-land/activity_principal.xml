@@ -1,12 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
-    <TextView
-        android:id="@+id/tvNumOrden"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ventana principal"/>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_weight=".5"
+        android:layout_height="0dp"
+        android:weightSum="1.5">
 
-</LinearLayout>
+        <RelativeLayout
+            android:id="@+id/rl_conocenos"
+            android:layout_weight=".5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="7.5dp"
+            android:layout_marginBottom="7.5dp"
+            android:layout_marginLeft="15dp">
+
+            <TextView
+                android:id="@+id/tv_principalActivity1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:text="@string/tv_principalActivity1"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_principalActivity1"
+                android:textSize="14sp"
+                android:textStyle="italic"
+                android:text="@string/tv_principalActivity1.1"
+                android:gravity="center"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_menu"
+            android:layout_weight=".5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="7.5dp"
+            android:layout_marginBottom="7.5dp"
+            android:layout_marginLeft="7.5dp">
+
+            <TextView
+                android:id="@+id/tv_principalActivity2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:text="@string/tv_principalActivity2"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_principalActivity2"
+                android:textSize="14sp"
+                android:textStyle="italic"
+                android:text="@string/tv_principalActivity2.1"
+                android:gravity="center"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_orden"
+            android:layout_weight=".5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccen"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="7.5dp"
+            android:layout_marginLeft="7.5dp">
+
+            <TextView
+                android:id="@+id/tv_principalActivity3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:text="@string/tv_principalActivity3"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_principalActivity3"
+                android:textSize="14sp"
+                android:textStyle="italic"
+                android:text="@string/tv_principalActivity3.1"
+                android:gravity="center"/>
+        </RelativeLayout>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_weight=".5"
+        android:layout_height="0dp"
+        android:weightSum="1.5">
+
+        <RelativeLayout
+            android:id="@+id/rl_necesitasAlgo"
+            android:layout_weight=".5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccen"
+            android:layout_marginTop="7.5dp"
+            android:layout_marginRight="7.5dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp">
+
+            <TextView
+                android:id="@+id/tv_principalActivity4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:text="@string/tv_principalActivity4"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_principalActivity4"
+                android:textSize="14sp"
+                android:textStyle="italic"
+                android:text="@string/tv_principalActivity4.1"
+                android:gravity="center"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_sucursales"
+            android:layout_weight=".5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent"
+            android:layout_marginTop="7.5dp"
+            android:layout_marginRight="7.5dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="7.5dp">
+
+            <TextView
+                android:id="@+id/tv_principalActivity5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:text="@string/tv_principalActivity5"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_principalActivity5"
+                android:textSize="14sp"
+                android:textStyle="italic"
+                android:text="@string/tv_principalActivity5.1"
+                android:gravity="center"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_quejasYsugerencias"
+            android:layout_weight=".5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:layout_marginTop="7.5dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="7.5dp">
+
+            <TextView
+                android:id="@+id/tv_principalActivity6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:text="@string/tv_principalActivity6"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_principalActivity6"
+                android:textSize="14sp"
+                android:textStyle="italic"
+                android:text="@string/tv_principalActivity6.1"
+                android:gravity="center"/>
+        </RelativeLayout>
+
+    </TableRow>
+
+</TableLayout>

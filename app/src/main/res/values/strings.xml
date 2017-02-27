@@ -1,16 +1,31 @@
 <resources>
     <string name="app_name">OrderNow App</string>
 
+    <!-- Textos para BienvenidaActivity -->
     <string name="tv_bienvenida">Bienvenido(s)</string>
     <string name="tv_tocaParaContinuar">Toca para continuar</string>
 
+    <!-- Textos para NumPersonasActivity -->
     <string name="tv_numPersonas">¿Cuántas personas son?</string>
     <string name="btn_continuar">Continuar</string>
+
+    <!-- Textos para PrincipalActivity -->
+    <string name="tv_principalActivity1">Conocenos...</string>
+    <string name="tv_principalActivity1.1">Conoce acerca de nuestro restaurante asi como los descuentos que tenemos para ti.</string>
+    <string name="tv_principalActivity2">Menú</string>
+    <string name="tv_principalActivity2.1">Consulta nuestra gran variedad de platillos que tenemos para ti.</string>
+    <string name="tv_principalActivity3">Orden</string>
+    <string name="tv_principalActivity3.1">Solicita tu cuenta.</string>
+    <string name="tv_principalActivity4">¿Necesitas algo?</string>
+    <string name="tv_principalActivity4.1">Solicita algún utencilio, salero, servilleta, etc.</string>
+    <string name="tv_principalActivity5">Sucursales</string>
+    <string name="tv_principalActivity5.1">Conoce todas nuestras sucursales.</string>
+    <string name="tv_principalActivity6">Quejas y Sugerencias</string>
+    <string name="tv_principalActivity6.1">Ayudanos a brindarte un mejor servicio.</string>
 
     <string name="msj_numMesaNoAsignado">El número de mesa ya existe.</string>
     <string name="msj_falloConexion">Fallo en la conexión.</string>
     <string name="msj_ingresarNumMesa">Ingresar el número de mesa.</string>
     <string name="msj_numOrdenNoAsignado">Error! intenta de nuevo.</string>
-
 
 </resources>
