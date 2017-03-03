@@ -27,5 +27,9 @@
     <string name="msj_falloConexion">Fallo en la conexión.</string>
     <string name="msj_ingresarNumMesa">Ingresar el número de mesa.</string>
     <string name="msj_numOrdenNoAsignado">Error! intenta de nuevo.</string>
+    <string name="titulo_menu">Menú</string>
+    <string name="titulo_bebidas">Bebidas</string>
+    <string name="btn_OrdenarMenu">Ordenar</string>
+    <string name="msj_espera">Espere un momento...</string>
 
 </resources>

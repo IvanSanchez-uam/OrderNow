@@ -37,12 +37,14 @@ public class ImplementacionControladorIndicarNumPersonas implements ControladorI
 
         //Si numOrden es -1 la orden no fue generada en la Api REST
         if (numOrden != -1) {
-            //Pasamos el numOrden a la actividad PrincipalActivity
-            Intent intent = new Intent(activity,PrincipalActivity.class);
-            intent.putExtra("numOrden",numOrden);
+            //Guardamos el numOrden en una preferencia
+            SharedPreferences preferenciasMesa = activity.getApplicationContext().getSharedPreferences("PreferenciasMesa", MODE_PRIVATE);
+            SharedPreferences.Editor editorPrefMesa = preferenciasMesa.edit();
+            editorPrefMesa.putInt("num_orden", numOrden);
+            editorPrefMesa.commit();
 
             //Se inicia la actividad PrincipalActivity
-            activity.startActivity(intent);
+            activity.startActivity(new Intent(activity,PrincipalActivity.class));
         }
 
         return numOrden;

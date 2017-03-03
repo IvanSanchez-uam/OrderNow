@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:baselineAligned="false">
+
+    <!--Lista de platillos y bebidas-->
+
+    <LinearLayout
+        android:layout_weight="0.2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:weightSum="1"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:layout_weight=".1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/titulo_menu"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            tools:ignore="NestedWeights" />
+
+        <ListView
+            android:id="@+id/lv_platillos"
+            android:drawSelectorOnTop="true"
+            android:layout_weight=".4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+        </ListView>
+
+        <TextView
+            android:layout_weight=".1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/titulo_bebidas"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"/>
+
+        <ListView
+            android:id="@+id/lv_bebidas"
+            android:drawSelectorOnTop="true"
+            android:layout_weight=".4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"></ListView>
+    </LinearLayout>
+
+    <!--Descripcion de platillos/bebidas y vista previa de la orden-->
+
+    <LinearLayout
+        android:layout_weight="0.8"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:weightSum="1"
+        tools:ignore="UselessParent">
+
+        <!--Descripcion de los platillos y las bebidas-->
+        <LinearLayout
+            android:layout_weight=".4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <ImageView
+                android:id="@+id/iv_platillo_bebida"
+                android:layout_weight=".4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorAccen"
+                />
+
+            <LinearLayout
+                android:layout_weight=".6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/tv_nomPlatilloBebida"
+                    android:layout_weight=".2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:text="@string/tv_bienvenida"
+                    android:textSize="17sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tv_descripcionPB"
+                    android:layout_weight=".35"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:text="@string/msj_espera"
+                    android:textSize="10sp"
+                    android:textStyle="italic"/>
+
+                <TextView
+                    android:id="@+id/tv_montoPB"
+                    android:layout_weight=".15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:textSize="13sp"
+                    android:textStyle="bold"/>
+
+                <android.support.design.widget.FloatingActionButton
+                    android:layout_weight=".3"
+                    android:layout_width="30dp"
+                    android:layout_height="0dp"
+                    android:clickable="true"
+                    android:layout_gravity="center_vertical|end"
+                    app:fabSize="auto"
+                    app:srcCompat="@drawable/icono_mas"
+                    android:id="@+id/floatingActionButton"
+                    android:layout_margin="10dp"
+                    app:backgroundTint="?attr/colorPrimary"
+                    app:rippleColor="@android:color/white"
+                    tools:ignore="RtlHardcoded" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--Descripcion de las ordenes de los clientes-->
+
+        <LinearLayout
+            android:layout_weight=".48"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:weightSum="1">
+
+            <ListView
+                android:id="@+id/lv_clientes"
+                android:layout_weight=".4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"></ListView>
+
+            <LinearLayout
+                android:layout_weight=".6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/titulo_descripcionOrdenCliente"
+                    android:layout_weight=".15"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:text="Orden {Persona 1}"
+                    android:textSize="15sp"
+                    android:gravity="center_horizontal"/>
+
+                <ListView
+                    android:id="@+id/lv_productosOrden"
+                    android:layout_weight=".85"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"></ListView>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--Botón ordenar-->
+
+        <Button
+            android:layout_weight=".12"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="right|center_vertical"
+            android:text="@string/btn_OrdenarMenu"/>
+    </LinearLayout>
+</LinearLayout>

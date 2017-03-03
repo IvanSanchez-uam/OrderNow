@@ -112,7 +112,7 @@ public class NumPersonasActivity extends AppCompatActivity  implements View.OnCl
 
             try {
                 respuestaNumOrden = controlador.obtener_numOrden(numPersonas,activity);
-                Log.d("Numero de personas en la mesa",String.valueOf(numPersonas));
+                Log.d("NumPersonas",String.valueOf(numPersonas));
 
                 if (respuestaNumOrden != -1){
                     finish();

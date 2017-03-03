@@ -2,12 +2,14 @@ package com.losjuanes.ordernowapp.api_rest;
 
 import com.losjuanes.ordernowapp.api_rest.pojo.Mesa;
 import com.losjuanes.ordernowapp.api_rest.pojo.Orden;
-import com.losjuanes.ordernowapp.api_rest.respuestas_json.RespuestaNumMesa;
+import com.losjuanes.ordernowapp.api_rest.pojo.Producto;
 
-import okhttp3.RequestBody;
+import java.util.ArrayList;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface EndPointApi {
@@ -23,4 +25,10 @@ public interface EndPointApi {
      */
     @POST(ConstantesRestApi.GENERAR_NUM_ORDEN)
     Call<Integer> generarNumOrden(@Body Orden orden);
+
+    /**
+     * Usado para obtener el menu del restaurante.
+     */
+    @GET(ConstantesRestApi.OBTENER_MENU)
+    Call<ArrayList<Producto>> obtenerMenu();
 }

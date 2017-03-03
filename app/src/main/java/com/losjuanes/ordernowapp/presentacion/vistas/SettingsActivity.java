@@ -51,53 +51,31 @@ public class SettingsActivity extends AppCompatActivity {
 
                 numMesa = etNumMesa.getText().toString();
                 asignarMesa.execute(new String[]{numMesa});
-
-                /*AsyncTask.execute(new Runnable() {
-                    @Override
-                    public void run() {
-                        String numMesa = "";
-                        int numeroMesa = 0;
-                        int mesaAsignada; // Codigo de respuesta del servidor (200 la mesa fue agregada,
-                                          //                                   404 la mesa ya existe).
-
-                        numMesa = etNumMesa.getText().toString();
-                        if (numMesa.compareTo("") != 0){
-                            numeroMesa = Integer.parseInt(numMesa);
-                            try {
-                                mesaAsignada = controlador.asignar_numeroMesa(numeroMesa, settingsActivity);
-                                Log.d("MesaAsignada",mesaAsignada + "");
-                                if(mesaAsignada == 200){
-                                    finish();
-                                }else if(mesaAsignada == 404){
-                                    msjRespuestaApiREST = getResources().getString(R.string.msj_numMesaNoAsignado);
-                                    Log.d("Respuesta","NumMesa ya existe");
-                                }else {
-                                    msjRespuestaApiREST = getResources().getString(R.string.msj_falloConexion);
-                                    Log.d("Respuesta", "Falló la conexión");
-                                }
-                            } catch (IOException e) {
-                                msjRespuestaApiREST = getResources().getString(R.string.msj_falloConexion);
-                                Log.d("Respuesta","Excepción de conexión con el Api REST");
-                            }
-                        }
-                    }
-                });
-                if(msjRespuestaApiREST.compareTo("") != 0) {
-                    Toast.makeText(settingsActivity, msjRespuestaApiREST, Toast.LENGTH_SHORT).show();
-                    msjRespuestaApiREST = "";
-                }*/
             }
         });
     }
 
+    /**
+     * Esta clase permitira que la parte de la conexion con la Api REST se ejecute en un hilo diferente
+     */
     private class AsignarMesa extends AsyncTask<String,Void,String>{
 
+        /**
+         * Este metodo se ejecuta inmediatamente despues de que el hilo finaliza su ejecucion.
+         *
+         * @param msjRespuestaApiREST, mensaje a mostrar al usuario.
+         */
         @Override
         protected void onPostExecute(String msjRespuestaApiREST) {
             if (msjRespuestaApiREST.compareTo("") != 0)
                 Toast.makeText(settingsActivity, msjRespuestaApiREST, Toast.LENGTH_SHORT).show();
         }
 
+        /**
+         * El hilo ejecuta esta parte del código.
+         * @param params se le pasa el numero de mesa.
+         * @return El mensaje a mostrar al usuario.
+         */
         @Override
         protected String doInBackground(String... params) {
             String numMesa = "";
