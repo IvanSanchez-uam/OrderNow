@@ -5,9 +5,11 @@ import android.util.Log;
 import com.losjuanes.ordernowapp.api_rest.ConexionApiRest;
 import com.losjuanes.ordernowapp.api_rest.EndPointApi;
 import com.losjuanes.ordernowapp.api_rest.pojo.Orden;
+import com.losjuanes.ordernowapp.api_rest.respuestas_json.RespuestaOrdenar;
 
 import java.io.IOException;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Response;
 
@@ -39,5 +41,27 @@ public class ImplementacionServicioOrden implements ServicioOrden {
         Log.d("Numero_de_orden", String.valueOf(numOrden));//Debbuging de numOrden
 
         return numOrden;
+    }
+
+    /**
+     * Se conectara con el Api REST para enviarle la orden de los clientes.
+     * @param orden contiene el numero de orden, los productos y las personas que pidieron el producto.
+     * @return true si el Api REST recibio la orden false en caso contrario.
+     */
+    @Override
+    public boolean ordenar(RespuestaOrdenar orden) throws IOException {
+        Response<ResponseBody> response;
+        int codigoHttp;
+        ConexionApiRest conexionApiRest = new ConexionApiRest();
+        EndPointApi endPointApi = conexionApiRest.establecerConexionPOST();
+        Call<ResponseBody> call = endPointApi.ordenar(orden);
+
+        response = call.execute();
+        codigoHttp = response.code();
+
+        if (codigoHttp == 200){
+            return true;
+        }else//El código recibido fue 500
+            return false;
     }
 }

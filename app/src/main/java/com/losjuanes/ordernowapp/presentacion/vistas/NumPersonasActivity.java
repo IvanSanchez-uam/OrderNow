@@ -1,6 +1,7 @@
 package com.losjuanes.ordernowapp.presentacion.vistas;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -115,6 +116,10 @@ public class NumPersonasActivity extends AppCompatActivity  implements View.OnCl
                 Log.d("NumPersonas",String.valueOf(numPersonas));
 
                 if (respuestaNumOrden != -1){
+                    SharedPreferences preferenciasMesa = activity.getApplicationContext().getSharedPreferences("PreferenciasMesa", MODE_PRIVATE);
+                    SharedPreferences.Editor editorPrefMesa = preferenciasMesa.edit();
+                    editorPrefMesa.putInt("num_personas", numPersonas);
+                    editorPrefMesa.commit();
                     finish();
                 }else{//No se genero la orden
                     msjRespuestaApiREST = getResources().getString(R.string.msj_numOrdenNoAsignado);

@@ -31,5 +31,11 @@
     <string name="titulo_bebidas">Bebidas</string>
     <string name="btn_OrdenarMenu">Ordenar</string>
     <string name="msj_espera">Espere un momento...</string>
-
+    <string name="msj_ordenEnviada">Orden enviada!</string>
+    <string name="msj_ordenEnviada_ERROR">Error al enviar la orden, vuelva a intentarlo</string>
+    <string name="titulo_productoDe">¿Persona que degustará el platillo/bebida?</string>
+    <string name="alrt_descripcionOrdenar">Confirmar orden?</string>
+    <string name="alrt_tituloOrdenar">Ordenar</string>
+    <string name="alrt_si">Si</string>
+    <string name="alrt_no">No</string>
 </resources>

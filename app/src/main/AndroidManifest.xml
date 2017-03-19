@@ -33,7 +33,6 @@
             android:name=".presentacion.vistas.MenuActivity"
             android:screenOrientation="landscape"
             android:parentActivityName=".presentacion.vistas.PrincipalActivity">
-
             <!-- Soporte para versiones 4.0 o menores -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

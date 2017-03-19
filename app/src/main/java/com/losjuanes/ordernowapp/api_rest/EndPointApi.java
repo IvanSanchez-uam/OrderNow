@@ -3,6 +3,7 @@ package com.losjuanes.ordernowapp.api_rest;
 import com.losjuanes.ordernowapp.api_rest.pojo.Mesa;
 import com.losjuanes.ordernowapp.api_rest.pojo.Orden;
 import com.losjuanes.ordernowapp.api_rest.pojo.Producto;
+import com.losjuanes.ordernowapp.api_rest.respuestas_json.RespuestaOrdenar;
 
 import java.util.ArrayList;
 
@@ -25,6 +26,12 @@ public interface EndPointApi {
      */
     @POST(ConstantesRestApi.GENERAR_NUM_ORDEN)
     Call<Integer> generarNumOrden(@Body Orden orden);
+
+    /**
+     * Usado para enviar la orden del cliente.
+     */
+    @POST(ConstantesRestApi.ORDENAR)
+    Call<ResponseBody> ordenar(@Body RespuestaOrdenar respuestaOrdenar);
 
     /**
      * Usado para obtener el menu del restaurante.
