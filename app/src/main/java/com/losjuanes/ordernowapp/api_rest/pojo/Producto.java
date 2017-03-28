@@ -1,9 +1,5 @@
 package com.losjuanes.ordernowapp.api_rest.pojo;
 
-/**
- * Created by josec on 01/03/2017.
- */
-
 public class Producto {
 
     private int idProducto;

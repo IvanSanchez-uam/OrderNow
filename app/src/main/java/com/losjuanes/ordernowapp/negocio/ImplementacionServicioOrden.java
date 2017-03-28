@@ -5,6 +5,8 @@ import android.util.Log;
 import com.losjuanes.ordernowapp.api_rest.ConexionApiRest;
 import com.losjuanes.ordernowapp.api_rest.EndPointApi;
 import com.losjuanes.ordernowapp.api_rest.pojo.Orden;
+import com.losjuanes.ordernowapp.api_rest.respuestas_json.PeticionCuenta;
+import com.losjuanes.ordernowapp.api_rest.respuestas_json.RespuestaCuenta;
 import com.losjuanes.ordernowapp.api_rest.respuestas_json.RespuestaOrdenar;
 
 import java.io.IOException;
@@ -63,5 +65,44 @@ public class ImplementacionServicioOrden implements ServicioOrden {
             return true;
         }else//El código recibido fue 500
             return false;
+    }
+
+    /**
+     * Se conecta con el Api REST para obtener la cuenta de una orden.
+     * @param numOrden, id de la orden de la cual se desea obtener la cuenta.
+     * @return objeto RespuestaCuenta, contiene un arreglo con los productos de la orden
+     *                                  y el monto total de la misma.
+     */
+    @Override
+    public RespuestaCuenta obtenerCuenta(int numOrden) throws IOException {
+
+        Response<RespuestaCuenta> response;
+
+        ConexionApiRest conexionApiRest = new ConexionApiRest();
+        EndPointApi endPointApi = conexionApiRest.establecerConexionPOST();
+        Call<RespuestaCuenta> call = endPointApi.obtenerCuenta(new PeticionCuenta(numOrden));
+
+        response = call.execute();
+
+        return response.body();
+    }
+
+    /**
+     * Se conecta con el Api REST para pagar una orden.
+     * @param numOrden, id de la orden a pagar.
+     * @return 200 si la orden fue pagada, 500 en caso contrario.
+     */
+    @Override
+    public int pagar(int numOrden) throws IOException {
+
+        Response<ResponseBody> response;
+
+        ConexionApiRest conexionApiRest = new ConexionApiRest();
+        EndPointApi endPointApi = conexionApiRest.establecerConexionPOST();
+        Call<ResponseBody> call = endPointApi.pagar(new PeticionCuenta(numOrden));
+
+        response = call.execute();
+
+        return response.code();
     }
 }

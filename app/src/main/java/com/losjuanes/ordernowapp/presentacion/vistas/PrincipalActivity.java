@@ -9,7 +9,9 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.losjuanes.ordernowapp.R;
+import com.losjuanes.ordernowapp.presentacion.controladores.ControladorCuenta;
 import com.losjuanes.ordernowapp.presentacion.controladores.ControladorMuestraMenu;
+import com.losjuanes.ordernowapp.presentacion.controladores.ImplementacionControladorCuenta;
 import com.losjuanes.ordernowapp.presentacion.controladores.ImplementacionControladorMuestraMenu;
 
 public class PrincipalActivity extends AppCompatActivity implements View.OnClickListener{
@@ -18,6 +20,7 @@ public class PrincipalActivity extends AppCompatActivity implements View.OnClick
                     rl_necesitasAlgo, rl_sucursales, rl_quejasYsugerencias;
 
     private ControladorMuestraMenu controladorMenu;
+    private ControladorCuenta controladorCuenta;
 
     private Activity principalActivity = this;
 
@@ -27,10 +30,11 @@ public class PrincipalActivity extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.activity_principal);
 
         controladorMenu = new ImplementacionControladorMuestraMenu();
+        controladorCuenta = new ImplementacionControladorCuenta();
 
         rl_conocenos = (RelativeLayout) findViewById(R.id.rl_conocenos);
         rl_menu = (RelativeLayout) findViewById(R.id.rl_menu);
-        rl_orden = (RelativeLayout) findViewById(R.id.rl_orden);
+        rl_orden = (RelativeLayout) findViewById(R.id.rl_cuenta);
         rl_necesitasAlgo = (RelativeLayout) findViewById(R.id.rl_necesitasAlgo);
         rl_sucursales = (RelativeLayout) findViewById(R.id.rl_sucursales);
         rl_quejasYsugerencias = (RelativeLayout) findViewById(R.id.rl_quejasYsugerencias);
@@ -52,7 +56,8 @@ public class PrincipalActivity extends AppCompatActivity implements View.OnClick
             case R.id.rl_menu:
                 controladorMenu.iniciaActivity(principalActivity, MenuActivity.class);
                 break;
-            case R.id.rl_orden:
+            case R.id.rl_cuenta:
+                controladorCuenta.iniciaActivity(principalActivity,CuentaActivity.class);
                 break;
             case R.id.rl_necesitasAlgo:
                 break;

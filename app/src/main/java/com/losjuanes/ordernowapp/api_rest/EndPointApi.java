@@ -3,6 +3,8 @@ package com.losjuanes.ordernowapp.api_rest;
 import com.losjuanes.ordernowapp.api_rest.pojo.Mesa;
 import com.losjuanes.ordernowapp.api_rest.pojo.Orden;
 import com.losjuanes.ordernowapp.api_rest.pojo.Producto;
+import com.losjuanes.ordernowapp.api_rest.respuestas_json.PeticionCuenta;
+import com.losjuanes.ordernowapp.api_rest.respuestas_json.RespuestaCuenta;
 import com.losjuanes.ordernowapp.api_rest.respuestas_json.RespuestaOrdenar;
 
 import java.util.ArrayList;
@@ -38,4 +40,16 @@ public interface EndPointApi {
      */
     @GET(ConstantesRestApi.OBTENER_MENU)
     Call<ArrayList<Producto>> obtenerMenu();
+
+    /**
+     * Usado para obtener la cuenta de una orden.
+     */
+    @POST(ConstantesRestApi.CUENTA)
+    Call<RespuestaCuenta> obtenerCuenta(@Body PeticionCuenta idOrden);
+
+    /**
+     * Usado para pagar una orden.
+     */
+    @POST(ConstantesRestApi.PAGAR)
+    Call<ResponseBody> pagar(@Body PeticionCuenta idOrden);
 }

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <ListView
+        android:id="@+id/lvCuenta"
+        android:layout_width="match_parent"
+        android:layout_weight="0.8"
+        android:layout_height="0dp"
+        android:layout_margin="10dp">
+    </ListView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_weight="0.2"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_gravity="right"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/tv_total"
+            android:textColor="@color/rojo"
+            android:textSize="18sp"
+            android:gravity="center_vertical"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:id="@+id/tvMonto"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/tv_monto"
+            android:textColor="@color/rojo"
+            android:textSize="18sp"
+            android:gravity="center_vertical"
+            android:layout_marginRight="10dp"/>
+
+        <Button
+            android:id="@+id/btn_pagar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/btn_pagar"
+            android:layout_gravity="right"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -13,15 +13,20 @@
     <string name="tv_principalActivity1">Conocenos...</string>
     <string name="tv_principalActivity1.1">Conoce acerca de nuestro restaurante asi como los descuentos que tenemos para ti.</string>
     <string name="tv_principalActivity2">Menú</string>
-    <string name="tv_principalActivity2.1">Consulta nuestra gran variedad de platillos que tenemos para ti.</string>
-    <string name="tv_principalActivity3">Orden</string>
-    <string name="tv_principalActivity3.1">Solicita tu cuenta.</string>
+    <string name="tv_principalActivity2.1">Consulta nuestra gran variedad de platillos que tenemos para ti y realiza tu orden.</string>
+    <string name="tv_principalActivity3">Cuenta</string>
+    <string name="tv_principalActivity3.1">Consulta el monto de tu orden y solicita tu cuenta.</string>
     <string name="tv_principalActivity4">¿Necesitas algo?</string>
     <string name="tv_principalActivity4.1">Solicita algún utencilio, salero, servilleta, etc.</string>
     <string name="tv_principalActivity5">Sucursales</string>
     <string name="tv_principalActivity5.1">Conoce todas nuestras sucursales.</string>
     <string name="tv_principalActivity6">Quejas y Sugerencias</string>
     <string name="tv_principalActivity6.1">Ayudanos a brindarte un mejor servicio.</string>
+
+    <!-- Textos para CuentaActivity -->
+    <string name="tv_total">TOTAL:</string>
+    <string name="tv_monto">0.0 MXN</string>
+    <string name="btn_pagar">PAGAR</string>
 
     <string name="msj_numMesaNoAsignado">El número de mesa ya existe.</string>
     <string name="msj_falloConexion">Fallo en la conexión.</string>
