@@ -14,13 +14,13 @@
         <activity
             android:name=".presentacion.vistas.SettingsActivity"
             android:screenOrientation="landscape">
-            <!--
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            -->
+
         </activity>
         <activity
             android:name=".presentacion.vistas.BienvenidaActivity"
@@ -45,11 +45,6 @@
             android:name=".presentacion.vistas.CuentaActivity"
             android:parentActivityName=".presentacion.vistas.PrincipalActivity"
             android:screenOrientation="landscape">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
             <!-- Soporte para versiones 4.0 o menores -->
             <meta-data
