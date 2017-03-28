@@ -59,20 +59,16 @@ public class CuentaActivity extends AppCompatActivity implements View.OnClickLis
         numPersonas = pref.getInt("num_personas", 0);
         Log.d("prefOrdenPersonas", "numPersonas = " + numPersonas);
 
-        int x = 16;
         Cuenta obtenerCuenta = new Cuenta();
-        obtenerCuenta.execute(x);//Como solo es un parametro se puede enviar como tal
+        obtenerCuenta.execute(numOrden);//Como solo es un parametro se puede enviar como tal
                                         // sin necesidad de crear un arreglo (new int[]{numPersonasHilo})
 
     }
 
     @Override
     public void onClick(View v) {
-        int x = 16;
-
         Pagar pagarCueta = new Pagar();
-        pagarCueta.execute(x);
-
+        pagarCueta.execute(numOrden);
     }
 
 
