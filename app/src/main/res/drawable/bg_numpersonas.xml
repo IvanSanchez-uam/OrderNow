@@ -4,7 +4,7 @@
     android:shape="rectangle" >
 
     <!-- view background color -->
-    <solid android:color="@color/colorPrimary"/>
+    <solid android:color="#FFFFECB3"/>
 
     <!-- view background color -->
     <corners
@@ -13,7 +13,7 @@
 
     <!-- view background color -->
     <stroke
-        android:color="#FFFFECB3"
+        android:color="@color/colorPrimary"
         android:width="2dp"
         />
 
